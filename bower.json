@@ -1,0 +1,22 @@
+{
+  "name": "blod_and_author",
+  "description": "It's about Blog and about thier author",
+  "main": "index.js",
+  "authors": [
+    "@PallaviVerma"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/pallavi1912/BlogsAndAuthor",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0"
+  }
+}
