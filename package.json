@@ -1,0 +1,11 @@
+{
+  "name": "blog_and_author",
+  "version": "1.0.0",
+  "description": "It's about Blog and about thier author",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@PallaviVerma",
+  "license": "ISC"
+}
