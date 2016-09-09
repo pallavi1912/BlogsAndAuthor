@@ -45,9 +45,10 @@ var gulp=require('gulp'),
    /*********** Task for watching ***********/
    gulp.task('watch',function(){
     gulp.watch(paths.sass.watch, ['sass']);
+    gulp.watch(paths.indexHtml.watch, ['copyIndex']);
    });
    /********************** Task for develpoment *******************/
-   gulp.task('build',['sass']);
+   gulp.task('build',['copyIndex','sass']);
    gulp.task('default',['build','watch']);
 
    
