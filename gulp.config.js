@@ -1,0 +1,31 @@
+module.exports={
+	env:process.env.NODE_ENV || 'development',
+	jsSourceDir:'./app/scripts',
+	outputClientDir:"./build",
+	sass:{
+		src:"./app/resources/sass/app.scss",
+		watch:"./app/resources/sass/**/*.scss",
+		dest:"/css"
+	},
+	vendorCss:{
+		src:[
+		'app/resources/css/app.css',
+		'bower_components/bootstrap/dist/css/bootstrap.css'],
+		dest:"/css",
+		output:"vendor.min.css"
+
+	},
+	template:{
+		src:".app/**/*.html",
+		watch:"./app/scripts/**/*.html"
+	},
+	indexHtml:{
+		src:".app/index.html",
+		watch:".app/index.html"
+	},
+	images:{
+		src:'./app/resources/images/*',
+		watch:'./app/resources/images',
+		dest:'/images'
+	}
+};
