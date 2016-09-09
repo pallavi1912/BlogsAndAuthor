@@ -41,6 +41,14 @@ var gulp=require('gulp'),
    gulp.task('copyIndex' ,function(){
     return gulp.src(paths.indexHtml.src)
        .pipe(gulp.dest(paths.outputClientDir))
+   });
+   /******************* Task for vendorJS ***********/
+   gulp.task('vendorJS',function(){
+    return gulp.src(paths.vendorJs.src)
+          .pipe(uglify())
+          .pipe(concat(paths.vendorJs.output))
+          .pipe(gulp.dest(paths.outputClientDir + paths.vendorJs.dest));
+
    })
    /*********** Task for watching ***********/
    gulp.task('watch',function(){
@@ -48,7 +56,7 @@ var gulp=require('gulp'),
     gulp.watch(paths.indexHtml.watch, ['copyIndex']);
    });
    /********************** Task for develpoment *******************/
-   gulp.task('build',['copyIndex','sass']);
+   gulp.task('build',['vendorJS','copyIndex','sass']);
    gulp.task('default',['build','watch']);
 
    
