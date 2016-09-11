@@ -11,16 +11,17 @@ var API = require('./config/api'),
          // 'gm.datepickerMultiSelect',
          // 'ngSanitize',
          // 'ui.select',
-    	require('./common').name])
+    	require('./common').name,
+        require('./modules').name])
     	//require('./common').name
-    	/*require('./modules').name,
-    	require('./shared').name])*/
+    	
+    	// require('./shared').name])
     .run(['$rootScope', '$state', function($rootScope, $state){
     	console.log("in run");	
     }])
     .config(['$urlRouterProvider',function($urlRouterProvider){
-        $urlRouterProvider.when('','/dashboard');
-    	$urlRouterProvider.when('/','/dashboard');
+        $urlRouterProvider.when('','/blogList');
+    	$urlRouterProvider.when('/','/blogList');
     	console.log("in config");
     }]);
 
