@@ -1,6 +1,6 @@
 'use strict';
 module.exports=angular.module('Common',[])
-    .config(['$stateProvider' , '$urlRouteProvider',function($stateProvider , $urlRouteProvider) {
+    .config(['$stateProvider' , '$urlRouterProvider',function($stateProvider , $urlRouterProvider) {
     	$stateProvider
     	   .state('app',{
     	   	url:"/app",
@@ -8,7 +8,7 @@ module.exports=angular.module('Common',[])
     	   	template: require('./templates/header.html')
     	   })
     	   .state('app.dashboard',{
-    	   	url:"/dashboard",
+    	   	url:"^/dashboard",
     	   	template: '<h1>Welcome</h1>'
     	   })
     }]);

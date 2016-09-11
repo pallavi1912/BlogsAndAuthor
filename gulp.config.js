@@ -9,7 +9,10 @@ module.exports={
 	},
 	vendorCss:{
 		src:[
-		'app/resources/css/app.css',
+		'app/resources/css/main.css',
+		'app/resources/css/ie8.css',
+		'app/resources/css/ie9.css',
+		'app/resources/css/font-awesome.min.css',
 		'bower_components/bootstrap/dist/css/bootstrap.css'],
 		dest:"/css",
 		output:"vendor.min.css"
