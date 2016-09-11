@@ -37,6 +37,34 @@ var gulp=require('gulp'),
              message:'Sass Task completed'
           }));
    });
+   /***************** Task for compiling library css *********/
+   gulp.task('vendorCss', function(){
+    return gulp.src(paths.vendorCss.src)
+    .pipe(minify())
+    .pipe(concat(paths.vendorCss.output))
+    .pipe(gulp.dest(paths.outputClientDir + paths.vendorCss.dest));
+   });
+   /***************** Task for compiling js ***************/
+   gulp.task('js',function(){
+    return gulp.src(paths.js.src,{
+      read: false
+    })
+    .pipe(ngAnnotate())
+     .pipe(gulpbrowserify({
+            transform: stringify({
+                extensions: ['.html', '.tpl'],
+                minify: true
+            })
+        }))
+        .pipe(gulpIf(paths.env !== 'development', uglify()))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest(paths.outputClientDir + paths.js.dest))
+        .pipe(notify({
+            message: 'JS Task Completed'
+        }));
+   })
    /***************** Task for copy Index.html ************/
    gulp.task('copyIndex' ,function(){
     return gulp.src(paths.indexHtml.src)
@@ -54,9 +82,10 @@ var gulp=require('gulp'),
    gulp.task('watch',function(){
     gulp.watch(paths.sass.watch, ['sass']);
     gulp.watch(paths.indexHtml.watch, ['copyIndex']);
+    gulp.watch([paths.js.watch, paths.template.watch], ['js']);  
    });
    /********************** Task for develpoment *******************/
-   gulp.task('build',['vendorJS','copyIndex','sass']);
+   gulp.task('build',['vendorJS','vendorCss','js','copyIndex','sass']);
    gulp.task('default',['build','watch']);
 
    

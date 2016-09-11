@@ -15,7 +15,12 @@ module.exports={
 		output:"vendor.min.css"
 
 	},
-	 vendorJs: {
+    js:{
+    	src:'./app/scripts/app.js',
+    	watch:'./app/scripts/**/*.js',
+    	dest:'/js'
+    },
+	vendorJs: {
         src: [
             'bower_components/jquery/dist/jquery.min.js',
             'bower_components/angular/angular.min.js',
