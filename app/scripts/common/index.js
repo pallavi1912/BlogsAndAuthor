@@ -7,4 +7,8 @@ module.exports=angular.module('Common',[])
     	   	abstract:true,
     	   	template: require('./templates/header.html')
     	   })
+    	   .state('app.dashboard',{
+    	   	url:"/dashboard",
+    	   	template: '<h1>Welcome</h1>'
+    	   })
     }]);
