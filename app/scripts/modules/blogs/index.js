@@ -7,4 +7,6 @@ module.exports=angular.module('Blogs',[])
             moduleName:'blogs',
     	   	template: require('./templates/blogList.html')
     	   })
-    }]);
+    }])
+    .service('blogListService',require('./services/blog-list-service.js'))
+    .directive('blogListDirective',require('./directives/blogListDirective.js'));
