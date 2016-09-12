@@ -11,6 +11,7 @@ var API = require('./config/api'),
          // 'gm.datepickerMultiSelect',
          // 'ngSanitize',
          // 'ui.select',
+        require('./config').name,
     	require('./common').name,
         require('./modules').name])
     	//require('./common').name

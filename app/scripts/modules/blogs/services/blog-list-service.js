@@ -1,9 +1,9 @@
 'use strict';
 module.exports=[
 '$q',
-'HttpService',
+'$http',
 'API',
-function($q,HttpService,API){
+function($q,$http,API){
 	var blogList=[];
 	function getBlogList(){
 		var deffered= $q.defer(),
@@ -11,7 +11,7 @@ function($q,HttpService,API){
 			method:'GET',
 			url:API.blogs
 		}
-		HttpService.apiRequest(obj)
+		$http(obj)
 		 .then(function(data){
 		 	blogList=data;
 		 	deffered.resolve(data);
@@ -21,7 +21,6 @@ function($q,HttpService,API){
 		 });
 		 return deffered.promise;
 	}
-	getBlogList();
 	return{
 		getBlogList:getBlogList
 	};
