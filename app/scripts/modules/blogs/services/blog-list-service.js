@@ -22,4 +22,7 @@ function($q,HttpService,API){
 		 return deffered.promise;
 	}
 	getBlogList();
-}]
+	return{
+		getBlogList:getBlogList
+	};
+}];
