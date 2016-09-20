@@ -30,7 +30,7 @@ module.exports=angular.module('Blogs',[])
             resolve: {
             blogDetails: ['$q','$http','API','$stateParams', 'blogListService', function($q,$http,API,$stateParams, blogListService) {
             var deffered = $q.defer();
-            obj={
+            var obj={
                 method:'GET',
                 url:API.blogs + '/' + $stateParams.id
             }

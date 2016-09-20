@@ -22,7 +22,7 @@ module.exports = [
      */
     function init() {
      
-      vm.blogDetails = blogDetails;
+      vm.blogDetails = blogDetails.data;
       console.log("blog info", vm.blogDetails);
     }
     init();
