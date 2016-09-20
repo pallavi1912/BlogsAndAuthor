@@ -8,12 +8,18 @@ module.exports = [function() {
             blogDetails: '='
         },
         link: function(scope, elem, attrs) {},
-        controller: ['$scope', function($scope) {
+        controller: ['$scope','$state', function($scope,$state) {
             var vm = this;
 
             vm.blogDetails = $scope.blogDetails;
+            $scope.continueReading = function(id) {
+                console.log("in continue reading",id);
+                $state.go("app.blogDetails", {
+                    id: id
+                })
+            }
         }],
         controllerAs: 'vm'
     };
-    console.log("blogDetails in directive",vm.blogDetails);
+    console.log("blogDetails in directive", vm.blogDetails);
 }];
