@@ -6,6 +6,7 @@ module.exports=angular.module('Blogs',[])
     	   	url:"^/blogList",
             moduleName:'blogs',
     	   	template: require('./templates/blogList.html'),
+    	   	controller:'blogListController as vm',
     	   	resolve: {
           blogList: ['$q', 'blogListService', function($q, blogListService) {
             var deffered = $q.defer();
@@ -22,5 +23,6 @@ module.exports=angular.module('Blogs',[])
         }
     	   })
     }])
+    .controller('blogListController',require('./controllers/blogListController.js'))
     .service('blogListService',require('./services/blog-list-service.js'))
     .directive('blogListDirective',require('./directives/blogListDirective.js'));
