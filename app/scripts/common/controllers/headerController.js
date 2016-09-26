@@ -29,7 +29,7 @@ module.exports = [
     var modalInstance= $uibModal.open({
       animation:false,
       backdrop:'static',
-      template:'<h1>hello</h1>'
+      templateUrl:'../templates/login.html'
     });
    };
     
