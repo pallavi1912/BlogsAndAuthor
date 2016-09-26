@@ -5,10 +5,12 @@ module.exports=angular.module('Common',[])
     	   .state('app',{
     	   	url:"/app",
     	   	abstract:true,
+            controller:'headerController as vm',
     	   	template: require('./templates/header.html')
     	   })
     	   .state('app.dashboard',{
     	   	url:"^/dashboard",
     	   	template: '<h1>Welcome</h1>'
     	   })
-    }]);
+    }])
+    .controller('headerController',require('./controllers/headerController.js'));
