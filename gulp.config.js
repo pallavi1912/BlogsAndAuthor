@@ -34,6 +34,7 @@ module.exports={
             //'bower_components/datatables/media/js/dataTables.bootstrap.js',
             //'bower_components/angular-datatables/dist/angular-datatables.js',
             'bower_components/angular-toastr/dist/angular-toastr.tpls.js',
+            'node_modules/ng-facebook/ngFacebook.js'
             // 'scripts/common/libJs/position.js',
             // 'scripts/common/libJs/timepicker.js',
             // 'scripts/common/libJs/timepicker-tpls.js'
